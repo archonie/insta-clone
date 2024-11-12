@@ -1,0 +1,51 @@
+# macOS
+.DS_Store
+
+# Firebase
+InstaClone/Resources/GoogleService-Info.plist
+
+# Project-specific sensitive file
+#InstaClone/Resources/Constants.swift
+
+# Xcode
+xcuserdata/
+*.hmap
+*.xcuserstate
+
+# Build products
+build/
+*.app
+*.app.dSYM
+
+# Swift Package Manager
+.build/
+# Uncomment if you don't want to track package dependencies
+# Packages/
+# Package.pins
+# Package.resolved
+# .swiftpm
+
+# CocoaPods
+Pods/
+Podfile.lock
+*.xcworkspace
+
+# Carthage
+Carthage/Build/
+# Uncomment if you don’t want to track Carthage checkouts
+# Carthage/Checkouts
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
