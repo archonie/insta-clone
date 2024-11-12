@@ -2,7 +2,7 @@
 .DS_Store
 
 # Firebase
-InstaClone/Resources/GoogleService-Info.plist
+InstaClone/Resource/GoogleService-Info.plist
 
 # Project-specific sensitive file
 #InstaClone/Resources/Constants.swift
