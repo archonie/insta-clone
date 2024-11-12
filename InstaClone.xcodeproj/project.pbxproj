@@ -29,6 +29,9 @@
 		71DABB822CE1538B00D8C6DA /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DABB812CE1538B00D8C6DA /* PublishPostViewController.swift */; };
 		71DABB842CE1539400D8C6DA /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DABB832CE1539400D8C6DA /* PostEditorViewController.swift */; };
 		71FE1DB62CE3DC41007054FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71FE1DB52CE3DC41007054FB /* GoogleService-Info.plist */; };
+		71FE1DBA2CE3DF33007054FB /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1DB92CE3DF33007054FB /* DatabaseManager.swift */; };
+		71FE1DBD2CE3DFBD007054FB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1DBC2CE3DFB4007054FB /* AuthManager.swift */; };
+		71FE1DBF2CE3E008007054FB /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1DBE2CE3E004007054FB /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		71DABB812CE1538B00D8C6DA /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		71DABB832CE1539400D8C6DA /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		71FE1DB52CE3DC41007054FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		71FE1DB92CE3DF33007054FB /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		71FE1DBC2CE3DFB4007054FB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		71FE1DBE2CE3E004007054FB /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		E74BC214E805911880915450 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 		EEBDB371EFDDBB2B7FDD8F39 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		F2AD62E24F62A95047CF9615 /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,10 +108,11 @@
 		712036CB2CE1501700845E6A /* InstaClone */ = {
 			isa = PBXGroup;
 			children = (
-				712036D62CE1502A00845E6A /* Resource */,
+				71FE1DBB2CE3DF39007054FB /* Manager */,
+				712036D32CE1501900845E6A /* View */,
 				712036D52CE1502400845E6A /* Model */,
 				712036D42CE1501F00845E6A /* Controller */,
-				712036D32CE1501900845E6A /* View */,
+				712036D62CE1502A00845E6A /* Resource */,
 				712036C42CE1501700845E6A /* Info.plist */,
 			);
 			path = InstaClone;
@@ -150,14 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				71DABB6F2CE152EB00D8C6DA /* Onboarding */,
-				71DABB752CE1535300D8C6DA /* SearchViewController.swift */,
-				71DABB772CE1535A00D8C6DA /* SearchResultViewController.swift */,
-				71DABB792CE1535F00D8C6DA /* PostViewController.swift */,
-				71DABB7B2CE1536500D8C6DA /* EditProfileViewController.swift */,
-				71DABB7D2CE1536A00D8C6DA /* SettingsViewController.swift */,
-				71DABB7F2CE1537000D8C6DA /* ListViewController.swift */,
-				71DABB812CE1538B00D8C6DA /* PublishPostViewController.swift */,
-				71DABB832CE1539400D8C6DA /* PostEditorViewController.swift */,
+				71FE1DB82CE3DEC0007054FB /* General */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -190,6 +190,31 @@
 				71DABB732CE1530F00D8C6DA /* RegisterViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		71FE1DB82CE3DEC0007054FB /* General */ = {
+			isa = PBXGroup;
+			children = (
+				71DABB752CE1535300D8C6DA /* SearchViewController.swift */,
+				71DABB772CE1535A00D8C6DA /* SearchResultViewController.swift */,
+				71DABB792CE1535F00D8C6DA /* PostViewController.swift */,
+				71DABB7B2CE1536500D8C6DA /* EditProfileViewController.swift */,
+				71DABB7D2CE1536A00D8C6DA /* SettingsViewController.swift */,
+				71DABB7F2CE1537000D8C6DA /* ListViewController.swift */,
+				71DABB812CE1538B00D8C6DA /* PublishPostViewController.swift */,
+				71DABB832CE1539400D8C6DA /* PostEditorViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		71FE1DBB2CE3DF39007054FB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				71FE1DBE2CE3E004007054FB /* StorageManager.swift */,
+				71FE1DBC2CE3DFB4007054FB /* AuthManager.swift */,
+				71FE1DB92CE3DF33007054FB /* DatabaseManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		78E4ED432EDC64E59526C647 /* Frameworks */ = {
@@ -323,7 +348,10 @@
 				71DABB842CE1539400D8C6DA /* PostEditorViewController.swift in Sources */,
 				71DABB682CE1528300D8C6DA /* ExploreViewController.swift in Sources */,
 				71DABB6A2CE1528B00D8C6DA /* CameraViewController.swift in Sources */,
+				71FE1DBF2CE3E008007054FB /* StorageManager.swift in Sources */,
+				71FE1DBD2CE3DFBD007054FB /* AuthManager.swift in Sources */,
 				71DABB822CE1538B00D8C6DA /* PublishPostViewController.swift in Sources */,
+				71FE1DBA2CE3DF33007054FB /* DatabaseManager.swift in Sources */,
 				712036CC2CE1501700845E6A /* AppDelegate.swift in Sources */,
 				71DABB6C2CE1529900D8C6DA /* NotificationsViewController.swift in Sources */,
 				71DABB802CE1537000D8C6DA /* ListViewController.swift in Sources */,
