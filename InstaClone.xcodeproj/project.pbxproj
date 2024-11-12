@@ -28,6 +28,7 @@
 		71DABB802CE1537000D8C6DA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DABB7F2CE1537000D8C6DA /* ListViewController.swift */; };
 		71DABB822CE1538B00D8C6DA /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DABB812CE1538B00D8C6DA /* PublishPostViewController.swift */; };
 		71DABB842CE1539400D8C6DA /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DABB832CE1539400D8C6DA /* PostEditorViewController.swift */; };
+		71FE1DB62CE3DC41007054FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71FE1DB52CE3DC41007054FB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		71DABB7F2CE1537000D8C6DA /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		71DABB812CE1538B00D8C6DA /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		71DABB832CE1539400D8C6DA /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
+		71FE1DB52CE3DC41007054FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E74BC214E805911880915450 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 		EEBDB371EFDDBB2B7FDD8F39 /* Pods-InstaClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.release.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.release.xcconfig"; sourceTree = "<group>"; };
 		F2AD62E24F62A95047CF9615 /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 		712036D62CE1502A00845E6A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				71FE1DB52CE3DC41007054FB /* GoogleService-Info.plist */,
 				712036C22CE1501700845E6A /* AppDelegate.swift */,
 				712036C92CE1501700845E6A /* SceneDelegate.swift */,
 			);
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				712036CF2CE1501700845E6A /* Assets.xcassets in Resources */,
+				71FE1DB62CE3DC41007054FB /* GoogleService-Info.plist in Resources */,
 				712036D12CE1501700845E6A /* LaunchScreen.storyboard in Resources */,
 				712036D22CE1501700845E6A /* Main.storyboard in Resources */,
 			);
