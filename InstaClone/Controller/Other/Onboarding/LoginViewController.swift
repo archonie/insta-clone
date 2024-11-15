@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         field.placeholder = "Username or Email..."
         field.returnKeyType = .next
         field.leftViewMode = .always
+        field.keyboardType = .emailAddress
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
@@ -131,19 +132,19 @@ class LoginViewController: UIViewController {
         
         passwordField.frame = CGRect(
             x: 25,
-            y: usernameEmailField.bottom + 10,
+            y: usernameEmailField.bottom + 20,
             width: view.width - 50,
             height: 52
         )
         loginButton.frame = CGRect(
             x: 25,
-            y: passwordField.bottom + 10,
+            y: passwordField.bottom + 20,
             width: view.width - 50,
             height: 52
         )
         createAccountButton.frame = CGRect(
             x: 25,
-            y: loginButton.bottom + 10,
+            y: loginButton.bottom + 20,
             width: view.width - 50,
             height: 52
         )
@@ -187,6 +188,30 @@ class LoginViewController: UIViewController {
         }
         
         //login functionality
+        
+        var username:String?
+        var email: String?
+        
+        if usernameEmail.contains("@"), usernameEmail.contains(".") {
+            email = usernameEmail
+            username = nil
+        } else {
+            username = usernameEmail
+            email = nil
+        }
+        
+        
+        AuthManager.shared.loginUser(username: username, email: email, password: password) { [weak self] success in
+            DispatchQueue.main.async {
+                if success {
+                    self?.dismiss(animated: true)
+                } else {
+                    let alert = UIAlertController(title: "Could not Authenticate", message: "The credentials do not match any of our users.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Try Again", style: .cancel))
+                    self?.present(alert, animated: true)
+                }
+            }
+        }
     }
     
     @objc private func didTapTermsButton(){
@@ -207,7 +232,8 @@ class LoginViewController: UIViewController {
     
     @objc private func didTapCreateAccountButton(){
         let vc = RegisterViewController()
-        present(vc, animated: true)
+        vc.title = "Create Account"
+        present(UINavigationController(rootViewController: vc), animated: true)
     }
     
     
