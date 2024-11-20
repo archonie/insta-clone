@@ -38,6 +38,7 @@
 		71DABB802CE1537000D8C6DA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DABB7F2CE1537000D8C6DA /* ListViewController.swift */; };
 		71DABB822CE1538B00D8C6DA /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DABB812CE1538B00D8C6DA /* PublishPostViewController.swift */; };
 		71DABB842CE1539400D8C6DA /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DABB832CE1539400D8C6DA /* PostEditorViewController.swift */; };
+		71E80A562CEE9A8D00C983B4 /* UserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E80A552CEE9A8D00C983B4 /* UserFollowTableViewCell.swift */; };
 		71F967192CE513A500FCC7A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F967182CE513A100FCC7A5 /* Extensions.swift */; };
 		71F9671D2CE51C4100FCC7A5 /* LoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F9671C2CE51C4100FCC7A5 /* LoginHeaderView.swift */; };
 		71FE1DBA2CE3DF33007054FB /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FE1DB92CE3DF33007054FB /* DatabaseManager.swift */; };
@@ -78,6 +79,7 @@
 		71DABB7F2CE1537000D8C6DA /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		71DABB812CE1538B00D8C6DA /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		71DABB832CE1539400D8C6DA /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
+		71E80A552CEE9A8D00C983B4 /* UserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowTableViewCell.swift; sourceTree = "<group>"; };
 		71F967182CE513A100FCC7A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		71F9671C2CE51C4100FCC7A5 /* LoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeaderView.swift; sourceTree = "<group>"; };
 		71FE1DB92CE3DF33007054FB /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		716CA6332CEA4A8900C868C1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				71E80A542CEE9A6E00C983B4 /* ListView */,
 				71A50B7D2CEB668700DE40F4 /* Profile */,
 				71A50B792CEB5F5500DE40F4 /* EditProfile */,
 				716CA6372CEA4BA900C868C1 /* HomeFeed */,
@@ -263,6 +266,14 @@
 				71DABB732CE1530F00D8C6DA /* RegisterViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		71E80A542CEE9A6E00C983B4 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				71E80A552CEE9A8D00C983B4 /* UserFollowTableViewCell.swift */,
+			);
+			path = ListView;
 			sourceTree = "<group>";
 		};
 		71F967282CE5216700FCC7A5 /* Login */ = {
@@ -435,6 +446,7 @@
 				71A50B7B2CEB5F6800DE40F4 /* FormTableViewCell.swift in Sources */,
 				716CA6362CEA4AC000C868C1 /* IGFeedPostTableViewCell.swift in Sources */,
 				71FE1DBF2CE3E008007054FB /* StorageManager.swift in Sources */,
+				71E80A562CEE9A8D00C983B4 /* UserFollowTableViewCell.swift in Sources */,
 				71FE1DBD2CE3DFBD007054FB /* AuthManager.swift in Sources */,
 				71DABB822CE1538B00D8C6DA /* PublishPostViewController.swift in Sources */,
 				71FE1DBA2CE3DF33007054FB /* DatabaseManager.swift in Sources */,

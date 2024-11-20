@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Profile view controller 
+/// Profile view controller
 final class ProfileViewController: UIViewController {
     
     private var collectionView: UICollectionView?
@@ -101,6 +101,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             let tabControlHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileTabsCollectionReusableView.identifier, for: indexPath) as!
             ProfileTabsCollectionReusableView
             
+            tabControlHeader.delegate = self
             return tabControlHeader
         }
         let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProfileInfoHeaderCollectionReusableView.identifier, for: indexPath) as!
@@ -115,7 +116,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             return CGSize(width: collectionView.width, height: collectionView.height/3)
         }
         
-        return CGSize(width: collectionView.width, height: 65)
+        return CGSize(width: collectionView.width, height: 50)
     }
 }
 
@@ -126,14 +127,14 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     }
     
     func profileHeaderDidTapFollowersButton(_ header: ProfileInfoHeaderCollectionReusableView) {
-        let vc = ListViewController()
+        let vc = ListViewController(data: ["Joe Smith", "John Doe"])
         vc.title = "Followers"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileHeaderDidTapFollowingButton(_ header: ProfileInfoHeaderCollectionReusableView) {
-        let vc = ListViewController()
+        let vc = ListViewController(data: ["Joe Smith", "John Doe"])
         vc.title = "Following"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
@@ -147,4 +148,14 @@ extension ProfileViewController: ProfileInfoHeaderCollectionReusableViewDelegate
     }
     
     
+}
+
+extension ProfileViewController: ProfileTabsCollectionReusableViewDelegate {
+    func profileTabsDidTapGridButton(_ tabs: ProfileTabsCollectionReusableView) {
+        // Reload collectionview with data
+    }
+    
+    func profileTabsDidTapTaggedButton(_ tabs: ProfileTabsCollectionReusableView) {
+        // Reload collectionview with data
+    }
 }
