@@ -9,7 +9,7 @@ import UIKit
 
 class ListViewController: UIViewController {
     
-    private let data: [String]
+    private let data: [UserFollowTableCellModel]
     
     private let tableView: UITableView = {
         let table = UITableView()
@@ -17,7 +17,7 @@ class ListViewController: UIViewController {
         return table
     }()
     
-    init(data: [String]) {
+    init(data: [UserFollowTableCellModel]) {
         self.data = data
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,14 +64,21 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.width/4
+        return 75
     }
     
 }
 
 
 extension ListViewController: UserFollowTableViewCellDelegate {
-    func userFollowTableCellDidTapFollowButton(_ cell: UserFollowTableViewCell) {
-        // Change to unfollow
+    func userFollowTableCellDidTapFollowButton(model: UserFollowTableCellModel) {
+        switch model.type {
+        case .following:
+            //perform firebase update to unfollow
+            break
+        case .notFollowing:
+            // perform firebase update to unfollow
+            break
+         }
     }
 }
