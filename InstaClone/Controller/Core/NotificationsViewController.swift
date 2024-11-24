@@ -62,8 +62,9 @@ final class NotificationsViewController: UIViewController {
     private func fetchNotifications() {
         
         for x in 0...100 {
-            let post = UserPost(identifier: "", postType: .photo, thumbnailImage: URL(string: "https://www.google.com")!, postURL: URL(string: "https://www.google.com")!, caption: "", likeCount: [], comments: [], createdDate: Date(), taggedUsers: [])
-            let model = UserNotification(type: x%2 == 0 ? .like(post: post) : .follow(state: .notFollowing), text: "Hello World", user: User(username: "@joe", name: (first: "Joe", last: "Smith"), bio: "The name is joe", birthDate: Date(), profilePhoto: URL(string: "https://www.google.com")!, gender: .male, counts: UserCount(followers: 10, following: 10, posts: 2), joinDate: Date()))
+            let user = User(username: "@joe", name: (first: "Joe", last: "Smith"), bio: "The name is joe", birthDate: Date(), profilePhoto: URL(string: "https://www.google.com")!, gender: .male, counts: UserCount(followers: 10, following: 10, posts: 2), joinDate: Date())
+            let post = UserPost(identifier: "", postType: .photo, thumbnailImage: URL(string: "https://www.google.com")!, postURL: URL(string: "https://www.google.com")!, caption: "", likeCount: [], comments: [], createdDate: Date(), taggedUsers: [], owner: user)
+            let model = UserNotification(type: x%2 == 0 ? .like(post: post) : .follow(state: .notFollowing), text: "Hello World", user: user )
             models.append(model)
         }
         
@@ -119,7 +120,16 @@ extension NotificationsViewController: NotificationLikeEventTableViewCellDelegat
     
     func didTapPostButton(model: UserNotification) {
         
-        print("Post tapped")
-        // Open the post
+        switch model.type {
+        case .follow(_):
+            fatalError("Should never get called.")
+        case .like(let post):
+            let vc = PostViewController(model: post)
+            vc.title = post.postType.rawValue
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
     }
 }
