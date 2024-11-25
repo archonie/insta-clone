@@ -115,15 +115,19 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
         switch model.renderType {
         case .actions(let actions):
             let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionsTableViewCell.identifier, for: indexPath) as! IGFeedPostActionsTableViewCell
+            cell.delegate = self
             return cell
         case .comments(let comments):
             let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
             return cell
         case .header(let user):
             let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
+            cell.configure(with: user)
+            cell.delegate = self
             return cell
         case .primaryContent(let post):
             let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
+            cell.configure(with: post)
             return cell
         }
     }
@@ -144,5 +148,38 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
             return tableView.width
         }
     }
+    
+    func reportPost() {
         
+    }
+    
+        
+}
+
+extension PostViewController: IGFeedPostHeaderTableViewCellDelegate {
+    func didTapMoreButton() {
+        let actionSheet = UIAlertController(title: "Post Options", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        actionSheet.addAction(UIAlertAction(title: "Report Post", style: .destructive, handler: { [weak self] _ in
+            self?.reportPost()
+        }))
+        
+        present(actionSheet, animated: true)
+    }
+}
+
+extension PostViewController: IGFeedPostActionsTableViewCellDelegate {
+    func didTapLikeButton() {
+        
+    }
+    
+    func didTapCommentButton() {
+        
+    }
+    
+    func didTapSendButton() {
+        
+    }
+    
+    
 }
